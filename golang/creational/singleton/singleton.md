@@ -2,7 +2,7 @@
 
 [Singleton Design Pattern in Go (Golang)](https://golangbyexample.com/singleton-design-pattern-go/)
 
-**Introduction**
+## Introduction
 
 Singleton Design Pattern is a creational design pattern and also one of the most commonly used design pattern. This pattern is used when only a single instance of the struct should exist. This single instance is called a singleton object. Some of the cases where the singleton object is applicable:
 
@@ -12,6 +12,8 @@ Singleton Design Pattern is a creational design pattern and also one of the most
 The singleton instance is created when the struct is first initialized. Usually, there is getInstance() method defined on the struct for which only one instance needs to be created. Once created then the same singleton instance is returned every time by the **getInstance()**.
 
 In GO we have goroutines. Hence the singleton struct should return the same instance whenever multiple goroutines are trying to access that instance. It is very easy to get a singleton design pattern wrong. The below code illustrates the right way to create a singleton object.
+
+## Double Check Lock
 
 ```go
 var lock = &sync.Mutex{}
@@ -46,7 +48,7 @@ Above code ensures that only one instance of the single struct is created. Some 
 
 Here is the full code
 
-**single.go**
+**singleton.go**
 
 ```go
 package main
@@ -140,7 +142,7 @@ Single Instance already created-1
 - There are a couple of outputs of **"Single Instance already created-1"** meaning that some of the goroutines found the value of singleInstance as nil in the first check and bypassed that.
 - There are couple of output of **"Single Instance already created-2"** meaning by the time they reached the single instance was already created and they could not bypass the first if check
 
-**Other methods of creating a singleton object in Go**
+## Other methods of creating a singleton object in Go
 
 - **init() function**
 
@@ -150,7 +152,7 @@ We can create a single instance inside the init function. This is only applicabl
 
 The sync.Once will only perform the operation only once. See below code
 
-**single.go**
+**singleton.go**
 
 ```go
 var once sync.Once
