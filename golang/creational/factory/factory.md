@@ -1,4 +1,4 @@
-# Factory Design Pattern in Go (Golang)
+# Factory Design Pattern
 
 [Factory Design Pattern in Go (Golang)](https://golangbyexample.com/golang-factory-design-pattern/)
 
