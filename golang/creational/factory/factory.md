@@ -28,8 +28,9 @@ Below is the corresponding mapping UML diagram with the example given above
 
 The below table represents the mapping from the UML diagram actors to actual implementation actors in **“Example”** below
 
-| ProductFactory      | gunfactory.go |
+| Role                | File          |
 | ------------------- | ------------- |
+| ProductFactory      | gunfactory.go |
 | iProduct            | igun.go       |
 | Product             | gun.go        |
 | Concrete iProduct 1 | ak47go        |
