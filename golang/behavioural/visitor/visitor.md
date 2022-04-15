@@ -203,16 +203,16 @@ func (c *circle) getType() string {
 package main
 
 type rectangle struct {
-	l int
-	b int
+    l int
+    b int
 }
 
 func (r *rectangle) accept(v visitor) {
-	v.visitForRectangle(r)
+    v.visitForRectangle(r)
 }
 
 func (r *rectangle) getType() string {
-	return "Rectangle"
+    return "Rectangle"
 }
 ```
 
@@ -222,9 +222,9 @@ func (r *rectangle) getType() string {
 package main
 
 type visitor interface {
-	visitForSquare(*square)
-	visitForCircle(*circle)
-	visitForRectangle(*rectangle)
+    visitForSquare(*square)
+    visitForCircle(*circle)
+    visitForRectangle(*rectangle)
 }
 ```
 
@@ -236,22 +236,22 @@ package main
 import "fmt"
 
 type areaCalculator struct {
-	area int
+    area int
 }
 
 func (a *areaCalculator) visitForSquare(s *square) {
-	// Calculate area for square. After calculating the area assign in to the area instance variable
-	fmt.Println("Calculating area for square")
+    // Calculate area for square. After calculating the area assign in to the area instance variable
+    fmt.Println("Calculating area for square")
 }
 
 func (a *areaCalculator) visitForCircle(c *circle) {
-	// Calculate are for circle. After calculating the area assign in to the area instance variable
-	fmt.Println("Calculating area for circle")
+    // Calculate are for circle. After calculating the area assign in to the area instance variable
+    fmt.Println("Calculating area for circle")
 }
 
 func (a *areaCalculator) visitForRectangle(r *rectangle) {
-	// Calculate are for rectangle. After calculating the area assign in to the area instance variable
-	fmt.Println("Calculating area for rectangle")
+    // Calculate are for rectangle. After calculating the area assign in to the area instance variable
+    fmt.Println("Calculating area for rectangle")
 }
 ```
 
@@ -263,23 +263,23 @@ package main
 import "fmt"
 
 type middleCoordinates struct {
-	x int
-	y int
+    x int
+    y int
 }
 
 func (m *middleCoordinates) visitForSquare(s *square) {
-	// Calculate middle point coordinates for square. After calculating the area assign in to the x and y instance variable.
-	fmt.Println("Calculating middle point coordinates for square")
+    // Calculate middle point coordinates for square. After calculating the area assign in to the x and y instance variable.
+    fmt.Println("Calculating middle point coordinates for square")
 }
 
 func (m *middleCoordinates) visitForCircle(c *circle) {
-	// Calculate middle point coordinates for square. After calculating the area assign in to the x and y instance variable.
-	fmt.Println("Calculating middle point coordinates for circle")
+    // Calculate middle point coordinates for square. After calculating the area assign in to the x and y instance variable.
+    fmt.Println("Calculating middle point coordinates for circle")
 }
 
 func (m *middleCoordinates) visitForRectangle(r *rectangle) {
-	// Calculate middle point coordinates for square. After calculating the area assign in to the x and y instance variable.
-	fmt.Println("Calculating middle point coordinates for rectangle")
+    // Calculate middle point coordinates for square. After calculating the area assign in to the x and y instance variable.
+    fmt.Println("Calculating middle point coordinates for rectangle")
 }
 ```
 
@@ -328,90 +328,90 @@ package main
 import "fmt"
 
 type shape interface {
-	getType() string
-	accept(visitor)
+    getType() string
+    accept(visitor)
 }
 
 type square struct {
-	side int
+    side int
 }
 
 func (s *square) accept(v visitor) {
-	v.visitForSquare(s)
+    v.visitForSquare(s)
 }
 
 func (s *square) getType() string {
-	return "Square"
+    return "Square"
 }
 
 type circle struct {
-	radius int
+    radius int
 }
 
 func (c *circle) accept(v visitor) {
-	v.visitForCircle(c)
+    v.visitForCircle(c)
 }
 
 func (c *circle) getType() string {
-	return "Circle"
+    return "Circle"
 }
 
 type rectangle struct {
-	l int
-	b int
+    l int
+    b int
 }
 
 func (r *rectangle) accept(v visitor) {
-	v.visitForRectangle(r)
+    v.visitForRectangle(r)
 }
 
 func (r *rectangle) getType() string {
-	return "Rectangle"
+    return "Rectangle"
 }
 
 type visitor interface {
-	visitForSquare(*square)
-	visitForCircle(*circle)
-	visitForRectangle(*rectangle)
+    visitForSquare(*square)
+    visitForCircle(*circle)
+    visitForRectangle(*rectangle)
 }
 
 type areaCalculator struct {
-	area int
+    area int
 }
 
 func (a *areaCalculator) visitForSquare(s *square) {
-	// Calculate area for square. After calculating the area assign in to the area instance variable
-	fmt.Println("Calculating area for square")
+    // Calculate area for square. After calculating the area assign in to the area instance variable
+    fmt.Println("Calculating area for square")
 }
 
 func (a *areaCalculator) visitForCircle(c *circle) {
-	// Calculate are for circle. After calculating the area assign in to the area instance variable
-	fmt.Println("Calculating area for circle")
+    // Calculate are for circle. After calculating the area assign in to the area instance variable
+    fmt.Println("Calculating area for circle")
 }
 
 func (a *areaCalculator) visitForRectangle(r *rectangle) {
-	// Calculate are for rectangle. After calculating the area assign in to the area instance variable
-	fmt.Println("Calculating area for rectangle")
+    // Calculate are for rectangle. After calculating the area assign in to the area instance variable
+    fmt.Println("Calculating area for rectangle")
 }
 
 type middleCoordinates struct {
-	x int
-	y int
+    x int
+    y int
 }
 
 func (m *middleCoordinates) visitForSquare(s *square) {
-	// Calculate middle point coordinates for square. After calculating the area assign in to the x and y instance variable.
-	fmt.Println("Calculating middle point coordinates for square")
+    // Calculate middle point coordinates for square. After calculating the area assign in to the x and y instance variable.
+    fmt.Println("Calculating middle point coordinates for square")
 }
 
 func (m *middleCoordinates) visitForCircle(c *circle) {
-	// Calculate middle point coordinates for square. After calculating the area assign in to the x and y instance variable.
-	fmt.Println("Calculating middle point coordinates for circle")
+    // Calculate middle point coordinates for square. After calculating the area assign in to the x and y instance variable.
+    fmt.Println("Calculating middle point coordinates for circle")
 }
 
 func (m *middleCoordinates) visitForRectangle(r *rectangle) {
-	// Calculate middle point coordinates for square. After calculating the area assign in to the x and y instance variable.
-	fmt.Println("Calculating middle point coordinates for rectangle")
+    // Calculate middle point coordinates for square. After calculating the area assign in to the x and y instance variable.
+    fmt.Println("Calculating middle point coordinates for rectangle")
 }
 
 func main() {
